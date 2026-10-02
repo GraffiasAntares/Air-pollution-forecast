@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прогноз AQI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bar-color" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/authorization">Профиль</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Прогноз AQI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/guide">Руководство о защите от грязных частиц</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/description">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacts">Связаться со мной</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content" id="begin">
+    <!-- <button id="increase-text-size">Увеличить размер текста</button> -->
+    <div class="title-bar-center">Руководство о защите от грязных частиц</div>
+    <div class="bar" id="text">
+      <h1>Как загрязненный воздух влияет на организм</h1>
+      Возможно, вы не знали, но треть смертей от инсультов, рака легких и сердечных заболеваний связаны с загрязнением воздуха. Он может оказывать на организм такой же эффект, как регулярное курение табака и даже — как будто вы злоупотребляете солью. Хуже того, грязного воздуха очень сложно избежать, он попросту окружает нас. Микроскопические частицы проникают глубоко в нашу респираторную систему и систему циркуляции крови, поражая наши легкие, сердце и мозг.
+      Кратковремеменные эффекты от дыхания грязных воздухом включают пневмонию и разнообразные бронхиты. У вас может начать свербить в носу, горле, щипать в глазах. Также могут возникнуть головные боли, головокружение и тошнота.
+      Долговременные эффекты могут длиться годами и вести к смерти. Кроме сердечных болезней и рака легких может возникать эмфизема, а у беременных - пороки развития плода.
+      <p></p>
+      <h1>Что делать?</h1>
+      Покиньте территорию
+      Если вы оказались в районе с очень грязным воздухом — и вы чувствуете это при дыхании — лучшее решение как можно скорее покинуть его. Маски, дыхание через влажный платок и прочие ухищрения помогут, но незначительно.
+      <p></p>
+      Очиститель воздуха. <br>
+      Имеет смысл завести дома очиститель воздуха с эффектом мойки. Растения, несмотря на распространенное убеждение, неспособны эффективно очистить воздух в квартире. Этот миф появился в результате эксперимента, который проводила NASA в 1980-х гг. Он показал, что с помощью растений можно удалить из воздуха летучие соединения — краски для дома или лак для ногтей. Однако исследование проводилось в закрытой лаборатории. Наш же дом совсем не похож на герметичную среду. Поэтому растения не смогут сотворить в квартире какую-то магию. Более того, не рекомендуется излишне часто поливать их — чрезмерно влажная почва провоцирует рост микроорганизмов, которые способны вызвать аллергию.
+      <p></p>
+      Проветривайте. <br>
+      Если снаружи воздух не так плох, регулярно проветривайте помещение, не загрязняйте его сами (например, не курите). Кстати, вопреки частому мнению, сквозняки сами по себе простуду не вызывают. В ее возникновении виноваты вирусы. Специалисты рекомендуют поддерживать в жилых помещениях температуру 20–24 °C, а во время сна — 18 °C.
+      <p></p>
+      Укрепляйте здоровье. <br>
+      Регулярно проводите время на свежем воздухе. Гуляйте, занимайтесь спортом на природе. ВОЗ рекомендует уделять этому не менее 150 минут в неделю.
+      <p></p>
+      Уберите источники загрязнения. <br>
+      Избавьтесь от ковров, мягких игрушек и прочих пылесборников. Регулярно вытирайте пыль. Постирайте шторы — вы удивитесь, сколько пыли они на себя собирают. Не храните дома остатки краски, растворителей и прочих лакокрасочных материалов.
+    </div>
+    <div class="anchor-conteiner">
+      <a href="#begin" class="anchor"><img id="anchor-image" class="anchor hidden animated" src="../static/images/anchor-icon-blue.png" alt="Наверх"></a>  
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../static/js/script.js"></script>
+</body>
+</html>

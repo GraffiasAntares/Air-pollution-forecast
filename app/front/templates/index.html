@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прогноз AQI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div> <!-- вся страница -->
+    <div> <!-- боковое меню -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse bar-color" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/authorization">Профиль</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Прогноз AQI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/guide">Руководство о защите от грязных частиц</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/description">О проекте</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contacts">Связаться со мной</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="main-content"> <!-- прогнозная часть -->
+      <div class="title-bar-center">Прогноз AQI <h4>в городе Красноярске</h4></div>
+      <div class="flex">
+        <div class="title-bar">
+          Сегодня <br> ожидается
+        </div>
+          <div class="aqi-bar" id="0">
+            Загрузка...
+          </div>
+      </div>
+      <div class="flex">
+        <div class="advice-bar-first">
+          <span class="advice-text">Совет</span>
+        </div>
+        <div class="advice-bar-second">
+            <span class="advice-text">Загрузка...</span>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="forecast-bar">
+          <div class="title-bar-center">
+            Прогноз на неделю
+          </div>
+          <div class="card-conteiner">
+            <dl>
+              <dd>
+                <div class="forecast-card" id="1">
+                  <div class="little-block1"><h4>Дата</h4><div>Загрузка...</div></div>
+                  <div><h4>Индекс</h4><div class="little-block2 aqi-little-bar">Загрузка...</div></div>
+                  <div class="little-block3"><h4>Сообщение</h4><div>Загрузка...</div></div>
+                </div>
+              </dd>
+              <dd>
+                <div class="forecast-card" id="2">
+                  <div class="little-block1"><h4>Дата</h4><div>Загрузка...</div></div>
+                  <div><h4>Индекс</h4><div class="little-block2 aqi-little-bar">Загрузка...</div></div>
+                  <div class="little-block3"><h4>Сообщение</h4><div>Загрузка...</div></div>
+                </div>
+              </dd>
+              <dd>
+                <div class="forecast-card" id="3">
+                  <div class="little-block1"><h4>Дата</h4><div>Загрузка...</div></div>
+                  <div><h4>Индекс</h4><div class="little-block2 aqi-little-bar">Загрузка...</div></div>
+                  <div class="little-block3"><h4>Сообщение</h4><div>Загрузка...</div></div>
+                </div>
+              </dd>
+              <dd>
+                <div class="forecast-card" id="4">
+                  <div class="little-block1"><h4>Дата</h4><div>Загрузка...</div></div>
+                  <div><h4>Индекс</h4><div class="little-block2 aqi-little-bar">Загрузка...</div></div>
+                  <div class="little-block3"><h4>Сообщение</h4><div>Загрузка...</div></div>
+                </div>
+              </dd>
+              <dd>
+                <div class="forecast-card" id="5">
+                  <div class="little-block1"><h4>Дата</h4><div>Загрузка...</div></div>
+                  <div><h4>Индекс</h4><div class="little-block2 aqi-little-bar">Загрузка...</div></div>
+                  <div class="little-block3"><h4>Сообщение</h4><div>Загрузка...</div></div>
+                </div>
+              </dd>
+              <dd>
+                <div class="forecast-card" id="6">
+                  <div class="little-block1"><h4>Дата</h4><div>Загрузка...</div></div>
+                  <div><h4>Индекс</h4><div class="little-block2 aqi-little-bar">Загрузка...</div></div>
+                  <div class="little-block3"><h4>Сообщение</h4><div>Загрузка...</div></div>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../static/js/script.js"></script>
+  
+</body>
+</html>

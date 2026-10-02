@@ -1,0 +1,96 @@
+// Цвета
+$color-main: #abd2fa;
+$color-sub1: #7692ff;
+$color-sub2: #8252e2;
+$color-sub3: #0e0e0e8d;
+$color-sub4: #3d546f81;
+$color-sub5: rgb(28 43 99);
+$color-sub6: rgb(91 186 204);
+$color-white: white; 
+$color-black: black;
+$color-title: #6f8caa;
+$color-gray: #3d546f;
+$color-card-gray: rgb(53 76 101);
+$color-nothing: rgba(255, 255, 255, 0);
+$color-background: #091540;
+$color-background2: #1b3651;
+$indicator-color-green: #6eec2a;
+$indicator-color-yellow: #ece92a;
+$indicator-color-orange: #ec952a;
+$indicator-color-red: #d9302f;//#ec542a;
+
+// Углы
+$bar-border: 30px;
+$bar-padding: 30px;
+
+// Текст
+$text-size-base: 22px;
+$text-size-title: 3vw;
+$text-size-aqi: 4vw;
+$text-size-advice: 30px;
+
+// Эффекты
+$ef-blur: blur(30px);
+
+// Отступы
+$main-marg: 30px;
+
+// Миксины
+@mixin bar($bar-pad, $bar-color, $bar-flex) {
+    border-radius: $bar-border;
+    background-color: $bar-color;
+    padding: $bar-pad;
+    flex-basis: min-content;
+    flex: $bar-flex;
+    margin-bottom: 30px;
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@mixin cust-text ($text-color:white, $text-pos:center, $text-size:$text-size-base){
+    color:$text-color;
+    text-align:$text-pos;
+    font-size:$text-size;
+}
+
+@mixin forecast-card($card-pad,$card-marg,$card-color,$card-flex) {
+    border-radius: $bar-border;
+    background-color: $card-color;
+    padding: $card-pad;
+    margin: $card-marg;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex: $card-flex;
+};
+
+@mixin main-content-pc() {
+    margin-left: 35%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+@mixin main-content-phone {
+    margin: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+@mixin flex-pc {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: $main-marg;
+    margin-right: $main-marg;
+}
+
+@mixin flex-phone {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+
+

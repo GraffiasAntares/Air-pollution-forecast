@@ -1,0 +1,215 @@
+* {
+    font-family: 'Monaco';
+    text-decoration: none
+}
+
+body {
+    /* https://www.fonstola.ru/images/201310/fonstola.ru_129490.jpg */
+    background-image: url(../images/clouds.jpeg);
+    /* background-color: rgb(169, 184, 212); */
+    /* background: linear-gradient(rgb(37, 122, 188), rgb(229, 247, 255)); */
+    background-size: 150%;
+    padding: 10px;
+    /* margin-bottom: 30px; */
+}
+
+.main {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 50px;
+    /* background-color: rgba(0, 0, 0, 0.203); */
+}
+
+.left-menu {
+    width: 20%;
+    text-align: center;
+    height: 700px;
+    /* background-color: rgb(71, 112, 215); */
+    background: linear-gradient(rgba(133, 196, 231, 0.2), rgba(43, 45, 51, 0.2));
+    border-radius: 30px;
+    position: fixed;
+}
+
+.right-menu-page-index {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 30%;
+    border-radius: 30px;
+    /*Устанавливаем время и имя анимации*/
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+    @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+
+.pass {
+    height: 50px;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.current-aqi-ideal {
+    /* background-image: url(../images/Krasnoyarsk.jpeg); */
+    object-fit: cover;
+    background-position-y: -100px;
+    background-color: rgb(114, 224, 108);
+    border-radius: 30px;
+    height: 35%;
+}
+
+.current-aqi-norm {
+    /* background-image: url(../images/Krasnoyarsk.jpeg); */
+    object-fit: cover;
+    background-position-y: -100px;
+    background-color: rgb(255, 253, 124);
+    border-radius: 30px;
+    height: 35%;
+}
+
+.current-aqi-dirt {
+    /* background-image: url(../images/dirty_Krasnoyarsk.jpg); */
+    object-fit: cover;
+    background-position-y: -100px;
+    background-color: rgb(255, 150, 124);
+    border-radius: 30px;
+    height: 35%;
+}
+
+.current-p {
+    display: inline;
+    font-size: 50px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(75, 114, 114, 0.34);
+    border-radius: 20px;
+}
+
+.daily-aqi {
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(246, 250, 255);
+    border-radius: 30px;
+}
+
+.daily-p {
+    padding: 10px;
+}
+
+.left-menu>p:hover {
+    background-color: rgba(124, 187, 255, 0.3);
+}
+
+.left-menu-button {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 10px;
+    border-radius: 30px
+}
+
+.left-menu>p>a {
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    color: rgb(247, 252, 255);
+}
+
+.day-conteiner {
+    display: inline-table;
+    height: 250px;
+    width: 20%;
+    text-align: center;
+    margin: 20px;
+    /* margin-left: 6%;
+    padding-left: 5px;
+    padding-right: 5px; */
+    /* margin-right: 10px; */
+    background-color: rgba(233, 234, 234, 0.353);
+    border-radius: 30px;
+}
+
+.right-menu-page {
+    background-color: rgb(247, 252, 255);
+    height: 100%;
+    width: 80%;
+    margin-left: 30%;
+    border-radius: 30px;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.conteiner {
+    display: block;
+    padding: 30px;
+}
+
+.tittle {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+.info {
+    text-align: center;
+    margin-top: 10%;
+    padding: 20%;
+}
+
+.anchor {
+    background-image: url(../images/top_icon.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 40%;
+    
+    color: rgba(240, 248, 255, 0);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.divanchor {
+    margin-top: 45%;
+    margin-left: 85%;
+    text-align: right;
+    position: fixed;
+}
+
+.navbar,
+.navbar-collapse {
+  flex-direction: column;
+}
+.navbar-expand-lg .navbar-nav {
+  flex-direction: column;
+}
+
+.navbar .container-fluid, 
+.navbar-expand-lg .navbar-collapse, 
+.navbar-expand-lg .navbar-nav{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+      width: 28%;
+      height: 100vh;
+    }
+    form input {
+      margin-bottom: 0.7em;
+    }
+  }

@@ -1,0 +1,381 @@
+@use 'variables' as v;
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('../fonts/LCD5x8HRU.ttf') format('ttf');
+  }
+body {
+    background-color: v.$color-background2;
+    /* background-image: url(../images/clouds.jpeg); */
+    // font-family:'Gill Sans';
+    font-family: "Nunito", serif;
+    font-weight: 600;
+    font-size: v.$text-size-base;
+}
+p {
+    display: inline;
+}
+.d2 {
+    width: 100%;
+    height: 70px;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 180px solid #d9302f;
+    position: absolute;
+}
+%frosted-glass {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(40px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.main-content {
+    @extend %frosted-glass;
+    opacity: 0;
+}
+.nav-link {
+    color: v.$color-gray;
+    font-size: v.$text-size-base;
+  }
+.navbar-nav {
+    flex-direction: column;
+    overflow-y: auto;
+}
+.title-bar {
+    @include v.bar(v.$bar-padding,v.$color-main,1);
+    @include v.cust-text(v.$color-white,left,v.$text-size-title);
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.title-bar-center {
+    @include v.bar(v.$bar-padding,v.$color-white,1);
+    @include v.cust-text(v.$color-gray,center,v.$text-size-title);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    // text-align: center;
+}
+.bar {
+    @include v.bar(v.$bar-padding,v.$color-sub1,1);
+    @include v.cust-text(v.$color-white,left,v.$text-size-base);
+    // box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+}
+.op-bar {
+    @include v.bar(v.$bar-padding,v.$color-nothing,1);
+    @include v.cust-text(v.$color-white,center,v.$text-size-title);
+}
+.comment-bar {
+    @include v.bar(v.$bar-padding,v.$color-nothing,1);
+    @include v.cust-text(v.$color-white,left,v.$text-size-base);
+    margin-left: 30px;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+}
+.aqi-bar {
+    @include v.bar(v.$bar-padding,v.$color-nothing,1);
+    @include v.cust-text(v.$color-white,center,v.$text-size-aqi);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 30px;
+}
+.aqi-little-bar {
+    @include v.bar(0,v.$color-nothing,0);
+    @include v.cust-text(v.$color-black,center,v.$text-size-base);
+    margin-bottom: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+}
+.advice-bar-first {
+    @include v.bar(10px,v.$color-main,1);
+    @include v.cust-text($text-pos:center,$text-size:v.$text-size-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.advice-bar-second {
+    @include v.bar(10px,v.$color-sub1,3);
+    @include v.cust-text($text-pos:center,$text-size:v.$text-size-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.forecast-bar {
+    @include v.bar(0px,v.$color-main,1);
+    .title-bar-center{
+        background-color: v.$color-nothing;
+        color: v.$color-white;
+        box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+    }
+}
+.card-conteiner {
+    @include v.bar(20px,v.$color-white,0);
+    justify-content: center;
+    margin-bottom: 0;
+    color: v.$color-white;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+}
+.forecast-card{
+    @include v.forecast-card(10px,0,v.$color-sub4,1);
+    width: 100%;
+    flex: 1;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-items: center;
+    align-items: center;
+}
+.forecast-div{
+    @include v.bar(v.$bar-padding,v.$color-sub1,0);
+    margin-bottom: 0;
+}
+%little-block {
+    display: flex;
+    flex-direction: column;
+}
+.little-block1 {
+    @extend %little-block;
+    @include v.bar(10px,v.$color-nothing,2);
+    @include v.cust-text($text-pos:center,$text-size:v.$text-size-base);
+    margin-bottom: 0;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+}
+.little-block2 {
+    @extend %little-block;
+    @include v.bar(10px,v.$color-nothing,2);
+    @include v.cust-text($text-pos:center,$text-size:v.$text-size-base);
+    margin-bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+}
+.little-block3 {
+    @extend %little-block;
+    @include v.bar(10px,v.$color-nothing,5);
+    @include v.cust-text($text-pos:right,$text-size:v.$text-size-base);
+    margin-bottom: 0;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+}
+.link {
+    display: block;
+    color: white;
+    padding: 1rem 0;
+    text-decoration: none;
+  }
+button{
+    opacity: 1;
+}
+.advice-text { 
+    font-size: v.$text-size-base;
+}
+.anchor-conteiner {
+    @include v.bar(0,v.$color-nothing,0);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+}
+.anchor {
+    width: 80px;
+}
+.textar {
+    display: block;
+    resize: none;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    font-style: normal;
+    font-family: system-ui;
+  }
+.carousel-control-next, 
+.carousel-control-prev {
+    top: 35%;
+    bottom: 35%;
+    opacity: 1;
+    align-items: center;
+    width: 8%;
+    border-radius: 50px;
+    background-color: v.$color-sub1;
+}
+
+@media (min-width: 769px) {
+
+    .navbar {
+        position: fixed;
+        width: 20%;
+        left: 0px;
+        margin-left: 5%;
+        --bs-navbar-padding-y: 0;
+        }
+    .navbar-nav {
+        max-height: calc(100vh - 56px);
+    }
+    .navbar-nav .nav-link {
+        padding: 2.5rem 0;
+    }
+    .navbar-collapse {
+        position: fixed;
+        width: 20%;
+        left: 0px;
+        top: 0;
+        overflow-y: auto;
+        margin-left: 10%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        border-radius: 30px;
+        background-color: v.$color-white;
+    }
+    .navbar-toggler {
+        display: none;
+    }
+    .main-content {
+        @include v.main-content-pc;
+    }
+    .navbar-expand-lg 
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar-nav,
+    .nav-link {
+        padding: 3rem 0; /* Устанавливаем отступы сверху и снизу для элементов */
+    }
+    .collapse navbar-collapse {
+        text-align: center;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+        justify-content: center;
+        align-content: center;
+    }
+    .flex {
+        @include v.flex-pc;
+    }
+}
+
+@media (max-width: 769px) {
+    
+    .navbar{
+        --bs-navbar-padding-y: 0;
+    }
+    .navbar-toggler {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1040;
+    }
+    .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    z-index: 1030;
+    width: 250px;
+    height: 100%;
+    padding-top: 56px; 
+    transition: right 0.3s ease;
+    }
+    .navbar-collapse.show {
+    right: 0; 
+    }
+    .navbar-nav {
+        height: 95%;
+    }
+    .nav-item {
+    margin-left: 5%;
+    margin-right: 5%;
+    /* margin-top: 10%;
+    margin-bottom: 10%; */
+    }
+    .navbar-nav .nav-link {
+    padding: 1.5rem 0;
+}
+    .navbar-toggler {
+    background-color: #abd2fa;
+    border-color:#091540;
+    }
+    .bar-color {
+    backdrop-filter: blur(30px);
+    background-color:#09154075;
+    color: white;
+    }
+    .main-content {
+        @include v.main-content-phone;
+    }
+    .flex {
+        @include v.flex-pc;
+    }
+    .nav-link {
+        color: v.$color-white;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .navbar{
+        --bs-navbar-padding-y: 0;
+    }
+    .title-bar {
+        font-size: 10vw;
+    }
+    .title-bar-center {
+        font-size: 10vw;
+    }
+    .bar{
+        font-size: 4vw;
+    }
+    .comment-bar {
+        margin-left: 0px;
+        font-size: 4vw;
+    }
+    .aqi-bar {
+        margin-left: 0;
+        font-size: 12vw;
+    }
+    .advice-bar-first{
+        display: flex;
+        align-items: center;
+    }
+    .advice-bar-second {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+    }
+    .little-block1{
+        text-align: left
+    }
+    .little-block3 {
+        text-align: left
+    }
+    .main-content {
+        @include v.main-content-phone;
+    }
+    .flex {
+        margin: 0;
+    }
+    .card-conteiner {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        align-items: center;
+    }
+    .nav-link {
+        color: v.$color-white;
+    }
+};

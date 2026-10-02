@@ -1,0 +1,10 @@
+{
+  "description": "",
+  "scripts": {
+    "build-css": "sass app/front/static/scss/main.scss app/front/static/css/main.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.83.4"
+  }
+  
+}
